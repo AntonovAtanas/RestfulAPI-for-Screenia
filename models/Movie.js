@@ -38,6 +38,10 @@ const movieSchema = new mongoose.Schema({
         rating: {
             type: Number,
             required: [true, 'Please enter your rating']
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now
         }
     }],
     ownerId: {
