@@ -8,8 +8,8 @@ const reviewCounter = require('../utils/reviewCounter')
 router.post('/add', async (req, res) => {
 
     try {
-        await movieManager.addmovie(req.body);
-        res.status(201).end();
+        const movie = await movieManager.addmovie(req.body);
+        res.status(201).json(movie);
     } catch (error) {
         res.status(400).json({
             message: 'Unable to add new movie'
